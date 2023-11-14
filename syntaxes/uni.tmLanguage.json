@@ -1,0 +1,72 @@
+{
+    "scopeName": "source.uni",
+    "patterns": [
+        {
+            "name": "punctuation.definition.tag.uni",
+            "match": "(@)"
+        },
+        {
+            "name": "keyword.control.directive.uni",
+            "match": "(gen|variable|state)(?=\\:)"
+        },
+        {
+            "name": "entity.name.tag.uni",
+            "match": "(:)"
+        },
+        {
+            "name": "entity.name.function.uni",
+            "match": "(element|activeSlide|slides)(?=[\\s]*[=\\(])"
+        },
+        {
+            "name": "punctuation.section.parens.begin.uni",
+            "begin": "\\(",
+            "end": "\\)",
+            "patterns": [
+                {
+                    "name": "variable.parameter.uni",
+                    "match": "\\b(name|type)\\b"
+                }
+            ]
+        },
+        {
+            "name": "string.quoted.double.uni",
+            "begin": "\"",
+            "end": "\"",
+            "patterns": [
+                {
+                    "name": "constant.character.escape.uni",
+                    "match": "\\\\(.)"
+                }
+            ]
+        },
+        {
+            "name": "punctuation.section.brackets.uni",
+            "match": "(\\[|\\])"
+        },
+        {
+            "name": "punctuation.section.braces.uni",
+            "match": "(\\{|\\})"
+        },
+        {
+            "name": "constant.other.object.key.uni",
+            "match": "\"([^\"]*)\"\\s*(?=\\:)"
+        },
+        {
+            "name": "constant.other.value.uni",
+            "match": "(:)\\s*\"[^\"]*\""
+        },
+        {
+            "includes": ["#comments"]
+        }
+    ],
+    "repository": {
+        "comments": {
+            "patterns": [
+                {
+                    "name": "comment.line.uni",
+                    "match": "//.*$"
+                }
+            ]
+        }
+    }
+}
